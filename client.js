@@ -1,8 +1,5 @@
 const net = require("net");
 
-// setup interface to handle user input from stdin
-
-
 
 // establishes a connection with the game server
 const connect = function () {
@@ -16,20 +13,18 @@ const connect = function () {
   // log a conneted message on connection
   conn.on('connect', () => {
     console.log('Succesfully connected to server');
+    // setup interface to handle
     conn.write('Name: JPK');
   });
 
- 
   // accept incoming data from server and log to console
   conn.on('data', (data) => {
     console.log(data);
   });
-
   return conn;
 };
 
 console.log("Connecting ...");
-connect();
 
 module.exports = {
   connect

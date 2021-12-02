@@ -21,6 +21,8 @@ const handleUserInput = function (key) {
       conn.write('Move: left')
   } else if (key === "\u001b[C") {
       conn.write('Move: right')
+  } else if (key === "\u0009") {
+      conn.write('Say: gotcha!')
   }
 };
 

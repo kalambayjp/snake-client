@@ -1,11 +1,13 @@
-const net = require("net");
-
+const constants = require('./constants')
+const net = constants.net
+const ip = constants.ip;
+const port = constants.port
 
 // establishes a connection with the game server
 const connect = function () {
   const conn = net.createConnection({
-    host: '165.227.47.243',
-    port: '50541'
+    host: ip,
+    port: port
   });
 
   // interpret incoming data as text
